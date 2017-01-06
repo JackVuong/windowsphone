@@ -1,0 +1,37 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MyMoney.QuanLyTaiKhoan"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#f3f3f3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="0,0,0,28" Background="#FF2AAEAE">
+            <TextBlock Text="Quản Lý Tài Khoản" Margin="0,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="48" Foreground="White" Height="78" HorizontalAlignment="Left" Width="468" FontFamily="Segoe UI Semibold"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Button Content="Thêm Tài Khoản" HorizontalAlignment="Left" Margin="66,85,0,0" VerticalAlignment="Top" Width="311" Height="75" FontWeight="Bold" FontSize="20" Background="#FF2AAEAE"/>
+            <Button Content="Xóa Tài Khoản" HorizontalAlignment="Left" Margin="66,190,0,0" VerticalAlignment="Top" Width="311" Height="75" FontWeight="Bold" FontSize="20" Background="#FF2AAEAE"/>
+            <Button Content="Sửa Tài Khoản" HorizontalAlignment="Left" Margin="66,292,0,0" VerticalAlignment="Top" Width="311" Height="75" FontWeight="Bold" FontSize="20" Background="#FF2AAEAE"/>
+            <Button Content="Chuyển Khoản" HorizontalAlignment="Left" Margin="66,390,0,0" VerticalAlignment="Top" Width="311" Height="75" FontWeight="Bold" FontSize="20" Background="#FF2AAEAE"/>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

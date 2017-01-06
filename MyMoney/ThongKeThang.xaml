@@ -1,0 +1,69 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="MyMoney.ThongKeThang"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:amCharts="clr-namespace:AmCharts.Windows.QuickCharts;assembly=AmCharts.Windows.QuickCharts.WP"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#f3f3f3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="0,0,0,28" Background="#FF2AAEAE">
+            <TextBlock Height="80" Text="Thống Kê Tháng" Margin="9,5,104,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48"/>
+            <Image Width="45" Height="45" Margin="384,-90,0,0" Source="./img/homepage1.png" RenderTransformOrigin="0.567,0.35" Tap="Image_Tap"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="lstSoChiTieu" Margin="0,146,0,0" Grid.Row="1">
+            <!--<phone:LongListSelector x:Name="listGiaoDich" HorizontalAlignment="Left" Height="674" VerticalAlignment="Top" Width="480" Margin="0,0,0,-108">
+                <phone:LongListSelector.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderThickness="1" BorderBrush="Gray" Width="480" Height="100">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFEDF0F0" Offset="0.63"/>
+                                    <GradientStop Color="Snow" Offset="0.34"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <StackPanel Margin="0,0,0,17">
+                                <TextBlock Text="{Binding NgayGD}" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="Black"/>
+                                <TextBlock Text="{Binding SoTien}" FontWeight="Normal" TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="#FFF90707" FontFamily="Calibri" Margin="370,0,0,-35" FontSize="24"/>
+                                <Image Source="{Binding Hinh}" Width="40" Height="50" Margin="0,0,350,0"/>
+                                <TextBlock Text="{Binding TenGD}" TextWrapping="Wrap" Margin="100,-40,0,0" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="Black"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </phone:LongListSelector.ItemTemplate>
+            </phone:LongListSelector>-->
+            <amCharts:SerialChart x:Name="BarChart" 
+                                  CategoryValueMemberPath="Name" Margin="10,0,10,10" >
+                <amCharts:SerialChart.Graphs>
+                    <amCharts:ColumnGraph Title="Title 1" ValueMemberPath="Value" ColumnWidthAllocation="0.4"/>
+                </amCharts:SerialChart.Graphs>
+            </amCharts:SerialChart>
+            <!--="Name"
+                               ValueMemberPath="Value" Margin="51,47,60,99"-->
+
+
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="48,10,0,0" TextWrapping="Wrap" Text="Thu" TextAlignment="Center" FontSize="36" Foreground="#FF11CADC" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBlock HorizontalAlignment="Left" Margin="368,10,0,0" TextWrapping="Wrap" Text="Chi" TextAlignment="Center" FontSize="36" Foreground="#FF11CADC" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBlock x:Name="txtTongThu" HorizontalAlignment="Left" Margin="48,72,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="#FFFF2FC6"/>
+        <TextBlock x:Name="txtTongChi" HorizontalAlignment="Left" Margin="355,72,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="#FFFF2FC6"/>
+    </Grid>
+
+</phone:PhoneApplicationPage>
